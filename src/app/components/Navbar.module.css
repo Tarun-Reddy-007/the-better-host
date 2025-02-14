@@ -1,0 +1,60 @@
+.navbarContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.logoImage {
+  height: 120px;
+  margin-left: 100%;
+  margin-top: 5%;
+  filter: brightness(1.2); 
+}
+
+.navList {
+  margin: 15px auto 0;
+  padding: 0;
+  list-style: none;
+  display: table;
+  width: 1200px;
+  text-align: center;
+  margin-left: 15%;
+}
+
+.navList li {
+  display: table-cell;
+  position: relative;
+  padding: 15px 0;
+}
+
+.navList a {
+  color: #8f3000;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.15em;
+  display: inline-block;
+  padding: 15px 20px;
+  position: relative;
+  font-weight: 999;
+  font-size: 20px;
+  filter: brightness(1.5); 
+}
+
+.navList a:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #8f3000;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+.navList a:hover:after {
+  width: 100%;
+  left: 0;
+}

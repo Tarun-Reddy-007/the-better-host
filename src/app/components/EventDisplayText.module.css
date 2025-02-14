@@ -1,0 +1,37 @@
+.textContainer {
+    position: absolute;
+    width: 90%;
+    height: auto;
+    text-align: left;
+    margin-top: 30%;
+    padding: 0 5%;
+    color: #f5f5f5;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; 
+  }
+  
+  .textContent {
+    display: flex;
+    flex-direction: row;  
+    align-items: center;  
+  }
+  
+  .text {
+    font-size: 68px; 
+    font-weight: 600;  
+    color: darkgoldenrod;
+    margin-right: 30px;  
+    max-width: 90%;
+    word-wrap: break-word;
+    transition: all 0.3s ease;
+    filter: brightness(1.4)
+  }
+  
+  .lineBreak {
+    font-size: 48px; 
+    font-weight: 400;
+    color: darkgoldenrod; 
+    margin-top: -8px;
+  }
+  

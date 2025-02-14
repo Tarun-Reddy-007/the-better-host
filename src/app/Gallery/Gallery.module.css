@@ -1,0 +1,29 @@
+body{
+    background-color: #000000;
+  }
+
+  .gallerySection {
+    display: flex;
+    align-items: flex-start; 
+    gap: 2rem; 
+    background-color: #000000;
+    padding-top:40px;
+    padding-bottom:40px;
+    margin-bottom: -40px;
+    margin-top: -60px;
+  }
+  
+  .heading {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding-left: 1rem; 
+    flex-shrink: 0;
+    margin-top: 300px;
+    margin-left: 50px;
+    margin-right:-200px;
+  }
+  
+  

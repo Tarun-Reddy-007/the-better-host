@@ -1,0 +1,103 @@
+body {
+  background-color: #000000;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin: 2rem 0;
+}
+
+.buttonGroup button {
+  padding: 0.8rem 1.5rem;
+  font-size: 18px;
+  background-color: black;
+  color: white;
+  border: 2px solid #8f3000;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border-radius: 5px;
+}
+
+.buttonGroup button:hover,
+.buttonGroup .active {
+  background-color: #8f3000;
+  color: white;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+
+.sectionTitle {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.cardsWrapper {
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #8f3000 transparent;
+  gap: 90px;
+  padding: 1rem;
+  margin-left: 100px;
+  margin-right: 100px;
+  scroll-snap-type: x mandatory;
+}
+
+.cardsWrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.cardsWrapper::-webkit-scrollbar-thumb {
+  background: #8f3000;
+  border-radius: 4px;
+}
+
+.cardsWrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.card {
+  background-color: black;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  min-width: 320px;
+  scroll-snap-align: start;
+  border: 2px solid #8f3000;
+}
+
+.cardImage {
+  width: 100%;
+  border-radius: 10px;
+  height: 261px;
+  object-fit: cover;
+}
+
+.cardDetails {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.viewMore {
+  margin-top: 20px;
+  padding: 0.5rem 1rem;
+  background-color: #8f3000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease-in-out;
+}
+
+.viewMore:hover {
+  background-color: #a04100;
+}

@@ -1,0 +1,46 @@
+.HomeLandingContainer {
+  width: 100%;
+  height: 100vh;
+  background-image: url('/Event_Images/holi-party.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  position: relative; 
+  z-index: 1;
+  margin-top:-54px;
+}
+
+.HomeLandingContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); 
+  z-index: -1; 
+}
+
+.contentOverlay {
+  background-color: rgba(255, 255, 255, 0.8);  
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 800px;
+  text-align: center;
+  margin-top: 100px;
+  z-index: 2; 
+  position: relative; 
+}
+
+.contentOverlay h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.contentOverlay p {
+  font-size: 20px;
+  color: #fff; 
+}

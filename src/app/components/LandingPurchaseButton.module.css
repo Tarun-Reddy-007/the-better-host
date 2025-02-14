@@ -1,0 +1,22 @@
+.button {
+    appearance: none;
+    background:  #8f3000; 
+    color: #ffffff;
+    cursor: pointer;
+    font: inherit;
+    font-weight: bolder;
+    font-size: 22px;
+    padding: 14px 14px;
+    position: relative;
+    transition: all 0.3s ease-in-out; 
+    margin-left: 120px;
+    filter: brightness(1.2); 
+    border:darkgoldenrod solid 2px;
+    border-radius: 15%;
+  }
+  
+  .button:hover {
+    filter: brightness(1.4); 
+    border-radius: 0%;
+  }
+  
