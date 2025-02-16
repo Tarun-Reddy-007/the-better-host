@@ -1,0 +1,154 @@
+.allEventsContainer {
+    width: 100%;
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    padding-top: 12%;
+    padding-bottom: 12%;
+  }
+  
+  .buttonsContainer {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    margin-bottom: 7%;
+  }
+  
+  .eventButton {
+    padding: 0.8rem 1.5rem;
+    font-family: 'BrownSugar', cursive, sans-serif;
+    letter-spacing: 0.2em;
+    font-size: 1rem;
+    font-weight: bold;
+    border: #ead3bc solid 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #000000;
+    color: white;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .eventButton:hover,
+  .activeButton {
+    background-color: #ead3bc;
+    color: black;
+  }
+  
+  .eventsWrapper {
+    width: 90%;
+    overflow-x: auto;
+  }
+  
+  .eventsContainer {
+    display: flex;
+    gap: 5%;
+    flex-wrap: nowrap;
+    padding-bottom: 10px;
+  }
+
+  .eventCard {
+    min-width: 300px;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    padding: 1rem;
+    flex-shrink: 0;
+  }
+
+  .eventCard::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.18);
+  }
+  
+  .eventDetails {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding:2%;
+    border:#ead3bc 2px solid;
+  }
+  
+  .eventName {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .eventInfo {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+  }
+  
+  .eventPrice {
+    color: #ead3bc;
+    font-weight: bold;
+  }
+  
+  .eventDate {
+    color: #ead3bc;
+    font-weight: bolder;
+  }
+  
+  .viewEvent {
+    display: block;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #804000;
+    text-decoration: none;
+    font-weight: bolder;
+    filter:brightness(1.2)
+  }
+
+  .viewEvent:hover{
+    color:#ead3bc;
+  }
+  
+  .eventsWrapper::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  .eventsWrapper::-webkit-scrollbar-track {
+    background: #2c2c2c;
+  }
+  
+  .eventsWrapper::-webkit-scrollbar-thumb {
+    background: #ead3bc;
+    border-radius: 5px;
+  }
+  
+  @media (max-width: 768px) {
+    .buttonsContainer {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+  
+    .eventButton {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .eventsContainer {
+      flex-wrap: nowrap;
+    }
+  
+    .eventCard {
+      min-width: 90%;
+      height: 300px;
+    }
+  }
+  

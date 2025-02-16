@@ -1,0 +1,100 @@
+.eventContainer {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('/Event_Images/EI2.jpg') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Dark Overlay */
+  .eventContainer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+  }
+  
+  /* Countdown Timer Container */
+  .countdownContainer {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+  }
+  
+  .countdownTitle {
+    font-size: 1rem;
+    margin-top: 15%;
+  }
+  
+  .countdownTimer {
+    font-size: 2.5rem;
+    display: flex;
+    gap: 10px;
+  }
+  
+  /* Event Content */
+  .eventContent {
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    right: 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    width: 90%;
+  }
+  
+  .eventTitle {
+    font-size: 4rem;
+  }
+  
+  .eventLink {
+    font-size: 2.2rem;
+    cursor: pointer;
+    color: white;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .eventLink:hover {
+    color: #ead3bc;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .eventContent {
+      flex-direction: column;
+      bottom: 15%;
+    }
+  
+    .eventTitle {
+      font-size: 2.5rem;
+      margin-bottom: 1%;
+    }
+  
+    .eventLink {
+      font-size: 1rem;
+    }
+  
+    .countdownContainer {
+      top: 80px;
+    }
+  
+    .countdownTimer {
+      font-size: 1.2rem;
+    }
+
+    .countdownTitle {
+        margin-top: 35%;
+      }
+  }
+  

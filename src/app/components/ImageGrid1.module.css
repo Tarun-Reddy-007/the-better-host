@@ -1,0 +1,53 @@
+.imageGridContainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .videoWrapper {
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    width: 10%; 
+    height: 80vh; 
+  }
+  
+  .video {
+    width: auto;  
+    width: 90%; 
+    height: 70vh; 
+    border-radius: 8px;
+  }
+  
+  .imageContainer {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+    width: 90%;
+  }
+  
+  .image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  @media (max-width: 768px) {
+    .imageGridContainer {
+      flex-direction: column;
+    }
+  
+    .videoWrapper,
+    .imageContainer {
+      max-width: 100%;
+    }
+  }
+  

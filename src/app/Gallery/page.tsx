@@ -1,19 +1,18 @@
-// src/app/gallery.tsx
-import GalleryLandCards from '../components/Gallery/GalleryLandCards';
-import GalleryRect from '../components/Gallery/GalleryRect';
-import Navbar from '../components/Navbar';
-import styles from './Gallery.module.css';
+"use client";
+import styles from "./Gallery.module.css";
+import Navbar from "../components/Navbar";
+import ImageGrid from "../components/ImageGrid1";
 
-export default function Gallery() {
+const Gallery = () => {
   return (
-    <div className={styles.container}>
+    <div className={styles.galleryContainer}>
       <Navbar />
-      <GalleryLandCards />
-
-      <div className={styles.gallerySection}>
-        <h2 className={styles.heading}>Top Event Images</h2>
-        <GalleryRect />
+      <div className={styles.backgroundSection}></div>
+      <div className={styles.contentContainer}>
+        <ImageGrid />
       </div>
     </div>
   );
-}
+};
+
+export default Gallery;
