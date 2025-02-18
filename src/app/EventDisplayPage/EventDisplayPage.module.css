@@ -1,15 +1,3 @@
-/* Prevent any horizontal scrolling */
-html, body {
-  margin: 0;
-  padding: 0;
-  color: #ffffff;
-  background-color: #000000 !important;
-  width: 100%;
-  overflow-x: hidden; /* This will strictly stop horizontal scrolling */
-  box-sizing: border-box;
-}
-
-/* Background Section */
 .backgroundSection {
   background-color: #000000 !important;
   background-size: cover;
@@ -17,24 +5,21 @@ html, body {
   height: 15vh;
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* Align content to the left */
+  justify-content: flex-start;
   text-align: left;
   padding-left: 5%;
 }
 
-/* Main Event Content - Now Left Aligned */
 .eventContent {
   padding: 40px;
   max-width: 100%;
   width: 90%;
-  margin: 0 auto 0 5%; /* Left aligned */
+  margin: 0 auto 0 5%; 
   box-sizing: border-box;
-  overflow-wrap: break-word; /* Ensures text wraps properly */
+  overflow-wrap: break-word; 
   word-wrap: break-word;
-  text-align: left; /* Force left alignment */
+  text-align: left; 
 }
-
-/* Event Details Wrapper - Left Align */
 .eventDetailsWrapper {
   display: flex;
   align-items: flex-start;
@@ -45,7 +30,6 @@ html, body {
   justify-content: flex-start;
 }
 
-/* Ensure Images Don't Overflow */
 .eventImage {
   flex-shrink: 0;
   margin-top: 3%;
@@ -62,37 +46,33 @@ html, body {
   max-width: 100%;
 }
 
-/* Map Link */
 .mapLink {
   color: #ffffff;
   text-decoration: underline;
   word-wrap: break-word;
 }
 
-/* Buy Now Button */
 .buyNow {
   display: flex;
-  align-items: flex-start; /* Align left */
+  align-items: flex-start; 
   gap: 15px;
   margin-top: 10px;
   flex-wrap: wrap;
   width: 100%;
 }
 
-/* About Event Section */
 .aboutEvent {
   margin-top: 20px;
   width: 100%;
   overflow-wrap: break-word;
   word-wrap: break-word;
-  text-align: left; /* Force left alignment */
+  text-align: left; 
 }
 
 .aboutEvent h2 {
   margin-bottom: 10px;
 }
 
-/* Image Gallery */
 .imageGallery {
   display: flex;
   gap: 3%;
@@ -111,17 +91,15 @@ html, body {
   max-width: 100%;
 }
 
-/* Text Styles */
 .price, .date, .time, .duration, .age_limit, .languages, .location, .grab {
   font-weight: bold;
   color: #e2d3c0;
   margin-bottom: 5px;
   word-wrap: break-word;
   overflow-wrap: break-word;
-  text-align: left; /* Left align text */
+  text-align: left; 
 }
 
-/* Responsive Typography */
 .price { font-size: 2rem; }
 .date { font-size: 1.5rem; }
 .time { font-size: 1.8rem; }
@@ -131,7 +109,6 @@ html, body {
 .location { font-size: 1.2rem; }
 .grab { font-size: 1.4rem; }
 
-/* FULLY RESPONSIVE FIXES */
 @media screen and (max-width: 1024px) {
   .eventDetailsWrapper {
     flex-direction: column;
@@ -142,7 +119,7 @@ html, body {
   .eventContent {
     padding: 30px;
     width: 95%;
-    margin: 0 auto 0 5%; /* Keep left alignment */
+    margin: 0 auto 0 5%;
   }
 
   .backgroundSection {

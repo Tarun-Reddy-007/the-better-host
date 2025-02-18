@@ -2,7 +2,6 @@
 import { useState } from "react";
 import Link from "next/link";
 import styles from "./AllEvents.module.css";
-import { useRouter } from "next/navigation"; 
 
 const eventsData = {
   ongoing: [
@@ -177,7 +176,6 @@ const eventsData = {
 
 const AllEvents = () => {
   const [selectedCategory, setSelectedCategory] = useState<"ongoing" | "upcoming" | "past">("ongoing");
-  const router = useRouter();
 
   return (
     <div className={styles.allEventsContainer}>

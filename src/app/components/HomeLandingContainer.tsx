@@ -1,7 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
-import Navbar from "./Navbar";  // Import the Navbar component
-import styles from "./HomeLandingContainer.module.css";  // Import the styles for this component
+import Navbar from "./Navbar";  
+import styles from "./HomeLandingContainer.module.css";  
+import Image from "next/image"; 
 
 const HomeLandingContainer = () => {
   const images = [
@@ -25,12 +26,14 @@ const HomeLandingContainer = () => {
   return (
     <div className={styles.container}>
       <Navbar />
-      <div
-        className={styles.background}
-        style={{ backgroundImage: `url(${images[currentImage]})` }}
-      >
-        <div className={styles.overlay}>
-        </div>
+      <div className={styles.background}>
+        <Image 
+          src={images[currentImage]} 
+          alt="Event Image" 
+          layout="fill"  
+          objectFit="cover"
+        />
+        <div className={styles.overlay}></div>
       </div>
     </div>
   );

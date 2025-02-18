@@ -1,7 +1,8 @@
 "use client";
 import styles from "./Footer.module.css";
-import { FaInstagram, FaFacebook, FaYoutube, FaLinkedin, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt,FaWhatsapp } from "react-icons/fa";
+import { FaInstagram, FaFacebook, FaYoutube, FaLinkedin, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaWhatsapp } from "react-icons/fa";
 import { IoLogoGoogle } from "react-icons/io";
+import Link from "next/link"; // Import Link from next/link
 
 import { useRouter } from "next/navigation";
 
@@ -25,9 +26,9 @@ const Footer = () => {
   return (
     <footer id="footer" className={styles.footer}>
       <div className={styles.socialIcons}>
-      <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
-        <FaWhatsapp />
-      </a>
+        <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
+          <FaWhatsapp />
+        </a>
 
         <a href="https://www.instagram.com/thebetterhost.tbh?igsh=MXVpcWV6cjRpZWZ3cw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
         <a href="mailto:Info@thebetterhost.com" target="_blank" rel="noopener noreferrer"><IoLogoGoogle /></a>
@@ -38,11 +39,11 @@ const Footer = () => {
       <div className={styles.footerContent}>
         <div className={styles.footerColumn}>
           <h3>Quick Links</h3>
-          <a href="/">Home</a>
-          <a href="/Events">Events</a>
+          <Link href="/">Home</Link> {/* Use Link instead of <a> */}
+          <Link href="/Events">Events</Link>
           <a href="#about" onClick={handleAboutClick}>About</a>
           <a href="#footer">Contact</a>
-          <a href="/Gallery">Gallery</a>
+          <Link href="/Gallery">Gallery</Link>
         </div>
         <div className={styles.footerColumn}>
           <h3>Contact</h3>

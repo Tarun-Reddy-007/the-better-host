@@ -4,7 +4,27 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./EventDisplayPage.module.css";
 import Navbar from "../components/Navbar";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
+
+type Event = {
+  id: number;
+  name: string;
+  price: string;
+  date: string;
+  image: string;
+  link: string;
+  time: string;
+  duration: string;
+  Age_Limit: string;
+  Languages: string[];
+  Location: string;
+  About: string;
+  poster: string;
+  Images: string[];
+  paytm_link: string;
+  bms_link: string;
+};
+
 
 const eventsData = {
   ongoing: [
@@ -176,13 +196,12 @@ const eventsData = {
     },
   ],
 };
-
 const allEvents = [...eventsData.ongoing, ...eventsData.upcoming, ...eventsData.past];
 
 const EventDisplayPage = () => {
   const searchParams = useSearchParams();
   const id = searchParams.get("id");
-  const [event, setEvent] = useState<any>(null);
+  const [event, setEvent] = useState<Event | null>(null);
 
   useEffect(() => {
     if (id) {
@@ -190,6 +209,41 @@ const EventDisplayPage = () => {
       setEvent(foundEvent || null);
     }
   }, [id]);
+
+  useEffect(() => {
+    // Apply styles to both html and body
+    document.documentElement.style.color = "#ffffff";
+    document.documentElement.style.backgroundColor = "#000000";
+    document.documentElement.style.width = "100%";
+    document.documentElement.style.overflowX = "hidden";
+    document.documentElement.style.boxSizing = "border-box";
+    document.documentElement.style.backgroundSize = "cover";
+  
+    document.body.style.color = "#ffffff";
+    document.body.style.backgroundColor = "#000000";
+    document.body.style.width = "100%";
+    document.body.style.overflowX = "hidden";
+    document.body.style.boxSizing = "border-box";
+    document.body.style.backgroundSize = "cover";
+  
+    // Cleanup function to reset the styles
+    return () => {
+      document.documentElement.style.color = "";
+      document.documentElement.style.backgroundColor = "";
+      document.documentElement.style.width = "";
+      document.documentElement.style.overflowX = "";
+      document.documentElement.style.boxSizing = "";
+      document.documentElement.style.backgroundSize = "";
+  
+      document.body.style.color = "";
+      document.body.style.backgroundColor = "";
+      document.body.style.width = "";
+      document.body.style.overflowX = "";
+      document.body.style.boxSizing = "";
+      document.body.style.backgroundSize = "";
+    };
+  }, []);
+  
 
   if (!event) {
     return (
@@ -215,45 +269,47 @@ const EventDisplayPage = () => {
             />
           </div>
           <div className={styles.eventDetails}>
-          <h1 style={{fontSize: "250%"}}>{event.name}</h1>
-          <p className={styles.price} style={{ fontSize: "200%", fontWeight: "bold", color: "#e2d3c0", marginBottom: "5px" }}>
-            {event.price}
-          </p>
-          <p className={styles.date} style={{ fontSize: "130%", fontWeight: "bold", color: "#e2d3c0", marginBottom: "5px" }}>
-            {event.date}
-          </p>
-          <p className={styles.time} style={{ fontSize: "160%", fontWeight: "bold", color: "#e2d3c0", marginBottom: "5px" }}>
-            {event.time}
-          </p>
-          <p className={styles.duration} style={{ fontSize: "140%", fontWeight: "bold", color: "#e2d3c0", marginBottom: "5px" }}>
-            {event.duration}
-          </p>
-          <p className={styles.age_limit} style={{ fontSize: "180%", fontWeight: "bold", color: "#e2d3c0", marginBottom: "5px" }}>
-            {event.Age_Limit}
-          </p>
-          <p className={styles.languages} style={{ fontSize: "120%", fontWeight: "bold", color: "#e2d3c0", marginBottom: "5px" }}>
-            {event.Languages.join(", ")}
-          </p>
-          <p className={styles.location} style={{ fontSize: "120%", fontWeight: "bold", color: "#e2d3c0", marginBottom: "5px" }}>
-            <strong>Location : </strong> 
-            <Link 
-              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(event.Location)}`} 
-              target="_blank"
-              className={styles.mapLink}
-            >
-              {event.Location}
-            </Link>
-          </p>
-          <div className={styles.buyNow}>
-            <span className={styles.grab} style={{ fontSize: "140%", fontWeight: "bold", color: "#e2d3c0", marginBottom: "5px" }}>Grab your passes now!</span>
-            <Link href={event.paytm_link} target="_blank">
-              <Image src="/paytm.png" alt="Paytm" width={200} height={50} />
-            </Link>
-            <Link href={event.bms_link} target="_blank">
-              <Image src="/bms.png" alt="BookMyShow" width={200} height={50} />
-            </Link>
+            <h1 style={{ fontSize: "250%" }}>{event.name}</h1>
+            <p className={styles.price} style={{ fontSize: "200%", fontWeight: "bold", color: "#e2d3c0", marginBottom: "5px" }}>
+              {event.price}
+            </p>
+            <p className={styles.date} style={{ fontSize: "130%", fontWeight: "bold", color: "#e2d3c0", marginBottom: "5px" }}>
+              {event.date}
+            </p>
+            <p className={styles.time} style={{ fontSize: "160%", fontWeight: "bold", color: "#e2d3c0", marginBottom: "5px" }}>
+              {event.time}
+            </p>
+            <p className={styles.duration} style={{ fontSize: "140%", fontWeight: "bold", color: "#e2d3c0", marginBottom: "5px" }}>
+              {event.duration}
+            </p>
+            <p className={styles.age_limit} style={{ fontSize: "180%", fontWeight: "bold", color: "#e2d3c0", marginBottom: "5px" }}>
+              {event.Age_Limit}
+            </p>
+            <p className={styles.languages} style={{ fontSize: "120%", fontWeight: "bold", color: "#e2d3c0", marginBottom: "5px" }}>
+              {event.Languages.join(", ")}
+            </p>
+            <p className={styles.location} style={{ fontSize: "120%", fontWeight: "bold", color: "#e2d3c0", marginBottom: "5px" }}>
+              <strong>Location : </strong>
+              <Link 
+                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(event.Location)}`} 
+                target="_blank"
+                className={styles.mapLink}
+              >
+                {event.Location}
+              </Link>
+            </p>
+            <div className={styles.buyNow}>
+              <span className={styles.grab} style={{ fontSize: "140%", fontWeight: "bold", color: "#e2d3c0", marginBottom: "5px" }}>
+                Grab your passes now!
+              </span>
+              <Link href={event.paytm_link} target="_blank">
+                <Image src="/paytm.png" alt="Paytm" width={200} height={50} />
+              </Link>
+              <Link href={event.bms_link} target="_blank">
+                <Image src="/bms.png" alt="BookMyShow" width={200} height={50} />
+              </Link>
+            </div>
           </div>
-        </div>
         </div>
         <div className={styles.aboutEvent}>
           <h2>About Event</h2>
@@ -276,4 +332,10 @@ const EventDisplayPage = () => {
   );
 };
 
-export default EventDisplayPage;
+export default function EventDisplayPageWrapper() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <EventDisplayPage />
+    </Suspense>
+  );
+}

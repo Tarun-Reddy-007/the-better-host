@@ -1,5 +1,5 @@
-'use client'
-import Link from 'next/link';
+'use client';
+import Image from 'next/image';  // Import Image from next/image
 import styles from './HomePageCards.module.css';
 
 const HomePageCards = () => {
@@ -43,19 +43,24 @@ const HomePageCards = () => {
       footerSection.scrollIntoView({ behavior: "smooth" });
     }
   };
-  
 
   return (
     <>
-    <h1 style={{ fontSize: "350%", color: "#e2d3c0", textAlign: "left", marginTop: "5%", marginLeft:"4%" }}>
-      Our Services
-    </h1>
+      <h1 style={{ fontSize: "350%", color: "#e2d3c0", textAlign: "left", marginTop: "5%", marginLeft:"4%" }}>
+        Our Services
+      </h1>
 
-    <div className={styles.cardsContainer}>
-      {cards.map((card, index) => (
-        <div key={index} className={styles.card}>
+      <div className={styles.cardsContainer}>
+        {cards.map((card, index) => (
+          <div key={index} className={styles.card}>
             <div className={styles.cardImageContainer}>
-              <img src={card.image} alt={card.title} className={styles.cardImage} />
+              <Image
+                src={card.image}
+                alt={card.title}
+                className={styles.cardImage}
+                width={500}  
+                height={300}
+              />
               <div className={styles.overlay}>
                 <div className={styles.cardTitle}>{card.title}</div>
                 <div className={styles.cardDescription}>{card.tagline}</div>
@@ -65,9 +70,9 @@ const HomePageCards = () => {
                 </div>
               </div>
             </div>
-        </div>
-      ))}
-    </div>
+          </div>
+        ))}
+      </div>
     </>
   );
 };
